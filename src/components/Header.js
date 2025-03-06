@@ -66,7 +66,7 @@ function Header() {
       const two = tokenTwo;
       setTokenOne(two);
       setTokenTwo(one);
-      fetchPrices(two.address, one.address);
+      // fetchPrices(two.address, one.address);
     }
 
     function openModal(asset) {
@@ -80,27 +80,27 @@ function Header() {
       setTokenTwoAmount(null);
       if (changeToken === 1) {
         setTokenOne(tokenList[i]);
-        fetchPrices(tokenList[i].address, tokenTwo.address)
+        // fetchPrices(tokenList[i].address, tokenTwo.address)
       }else {
         setTokenTwo(tokenList[i]);
-        fetchPrices(tokenOne.address, tokenList[i].address)
+        // fetchPrices(tokenOne.address, tokenList[i].address)
       }
       setIsOpen(false);
     }
 
-    async function fetchPrices(one, two) {
-    const res =   await axios.get(`http://localhost:3001/tokenPrice`, {
-      params: {addressOne: one, addressTwo: two }
-    })
+    // async function fetchPrices(one, two) {
+    // const res =   await axios.get(`http://localhost:3001/tokenPrice`, {
+    //   params: {addressOne: one, addressTwo: two }
+    // })
 
-    console.log(res.data);
-    setPrices(res.data);
-    }
+    // console.log(res.data);
+    // setPrices(res.data);
+    // }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-      // fetchPrices(tokenList[0].address, tokenList[1].address);
-    }, [])
+    //   // fetchPrices(tokenList[0].address, tokenList[1].address);
+    // }, [])
 
     const settings = (
       <>
@@ -121,7 +121,7 @@ function Header() {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             setProvider(provider);
             }else {
-                alert('Please install MetaMask');
+                alert('Please install MetaMask or Electroneum Compatible Wallet');
                 console.log('No wallet found');
             }
         
@@ -146,14 +146,14 @@ function Header() {
         
     }
 
-    const copyToClipboard = () => {
-        setCopyButtonState('copying');
-        navigator.clipboard.writeText(account);
+    // const copyToClipboard = () => {
+    //     setCopyButtonState('copying');
+    //     navigator.clipboard.writeText(account);
         
-        setTimeout(() => {
-            setCopyButtonState('copy');
-        }, 2000);
-    };
+    //     setTimeout(() => {
+    //         setCopyButtonState('copy');
+    //     }, 2000);
+    // };
 
 
   return ( 
