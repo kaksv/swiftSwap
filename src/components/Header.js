@@ -13,11 +13,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../swiftswap.jpg'
 import Etn from '../Etn.png'
 
-// Lets see about Wagmi
-import { mainnet} from 'wagmi/chains';
-import { injected } from 'wagmi/connectors';
-import { createConfig } from 'wagmi';
-import { createClient } from 'viem';
 
 
 function Header() {
